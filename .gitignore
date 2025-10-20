@@ -1,0 +1,17 @@
+# Build
+/build/
+/dist/
+/out/
+/CMakeFiles/
+/CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

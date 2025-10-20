@@ -1,0 +1,13 @@
+name: build
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build build --config Release -j
+      - name: Run smoke test
+        run: g++ -std=c++17 -Iinclude tests/smoke_test.cpp src/example.cpp -o test && ./test
